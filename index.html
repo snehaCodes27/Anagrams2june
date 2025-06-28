@@ -1,0 +1,117 @@
+<html>
+	<head>
+		<title>Anagrams by sneha</title>
+		<style>
+* {
+	box-sizing: border-box;
+	font-family: 'Segoe UI', sans-serif;
+	text-align: center;
+}
+
+body {
+	background-color: #e8f5e9;
+	margin: 0;
+	padding-top: 50px;
+}
+
+h1 {
+	background-color: #2e7d32;
+	color: white;
+	padding: 20px;
+	margin: 0 auto 30px;
+	border-radius: 12px;
+	width: 80%;
+	font-size: 36px;
+}
+
+input[type="text"] {
+	width: 60%;
+	padding: 12px;
+	margin: 15px 0;
+	font-size: 18px;
+	border: 2px solid #a5d6a7;
+	border-radius: 8px;
+}
+
+input[type="submit"] {
+	background-color: #43a047;
+	color: white;
+	padding: 12px 24px;
+	font-size: 18px;
+	border: none;
+	border-radius: 8px;
+	cursor: pointer;
+	transition: 0.3s;
+}
+
+input[type="submit"]:hover {
+	background-color: #2e7d32;
+}
+
+#msg {
+	margin-top: 25px;
+	font-size: 22px;
+	color: #1b5e20;
+	font-weight: bold;
+}
+
+
+
+		</style>
+
+	</head>
+	<body>
+	<div class="container">
+		<h1>Anagrams App</h1>
+		<form onsubmit="change()">
+			<input type="text" id="name1" placeholder="Enter your string"/><br/><br/>
+<input type="text" id="name2" placeholder="Enter your string"/><br/><br/>
+			<input type="submit" value="check"/>
+		</form>
+		<h2 id="msg"></h2>
+	</div>
+
+
+		<h2 id ="msg">
+		<script>
+			function change()
+			{
+				event.preventDefault();
+				let name1 = document.getElementById("name1");
+				let name2 = document.getElementById("name2");
+				let msg = document.getElementById("msg");
+				if(name1.value.trim() === "")
+				{
+					alert("Enter your name");
+					msg.innerHTML="";
+					name2.value="";
+					name2.focus();
+					return;
+				}
+				if(name2.value.trim() === "")
+				{
+					alert("Enter your name");
+					msg.innerHTML="";
+					name2.value="";
+					name2.focus();
+					return;
+				}
+
+				let org1 = name1.value.split("").sort().join("");
+				let org2 = name2.value.split("").sort().join("");
+				
+					if(org1===org2)
+					{
+						msg.innerHTML="yes they are anagrams";
+					}	
+					else
+					{
+						msg.innerHTML="nope they are not anagrams";
+					}
+
+				
+			}
+		</script>
+
+	</body>		
+<html>
